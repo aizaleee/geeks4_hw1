@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-from things.models import Flower
+from things.models import Post
 
-admin.site.register(Flower)
+admin.site.register(Post)

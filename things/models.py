@@ -1,8 +1,11 @@
 from django.db import models
 
 # Create your models here.
-class Flower(models.Model):
-    header = models.CharField(max_length=255)
-    description = models.TextField()
-    user = models.IntegerField(null=True, blank=True)
-    
+class Post(models.Model):
+    title = models.CharField(max_length=255)
+    content = models.TextField()    
+    is_published = models.BooleanField(default=False)
+    published_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.title}'

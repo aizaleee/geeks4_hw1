@@ -16,11 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from things.views import flower, main, about
+from things.views import flower, main, about, if_published
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('flower/', flower),
     path('', main),
-    path('about/', about)
-]
+    path('about/', about),
+    path('published/', if_published, name='published_posts'),
+    ]
+   
